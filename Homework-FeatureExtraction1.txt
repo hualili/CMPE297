@@ -1,0 +1,67 @@
+Homework on Feature Extraction (1) 
+HL 
+Feb. 2017
+
+1. Write C/C++ code to compute 
+   (1) perimeter P (feature vector's component v1); 
+   (2) Area A (component v2); 
+   (3) Orientation angle Theta (feature vector component v3), and 
+       coefficient a, b and c needed to compute Theta. 
+
+2. Use the testing pattern images from the class (github), as testing 
+patterns, to compute P for each image, and then create an excel document
+to enter your computation result (P, A and Theta for each image). 
+
+3. Submit your code together with readme.txt to describe compilation and 
+   build. Submission of the code is via CANVAS. 
+
+4. Optional, create a library, SJSU297OpenCV.lib with this single module. 
+
+5. Optional, run video display image till it crashes, and record its 
+   running time.  
+
+Note: 
+1. Function prototype naming convention: 
+
+   Prefix (3 or 6 letters) + Root (upto 12 letters, with good inituitive 
+                                   meaning, for example, for perimeter 
+                                   computation, use someting like 
+                                   "Perimeter")
+   sjsu297_perimeter( ); 
+
+   The parameters to be passed as reference, use typedef struct, for
+   example: 
+
+   typedef struct
+    {
+      int x[ARRAY_LEN];
+      int y[ARRAY_LEN];
+      int i_accumulator;
+    } MY_STRUCT;
+
+　　　　int main()
+　　　　{
+　　　　　MY_STRUCT my_struct;
+　　   getArrayPts( &my_struct );
+
+  　　 for(index = 0; index <= my_struct.i_accumulator; index++) {
+   　　printf( "Main After sub x = %4d y = %4d \n", my_struct.x[index],
+                                                my_struct.y[index]);
+　　　　　} //for     
+    }// main  
+
+    void getArrayPts( MY_STRUCT *xx )
+    {
+     int i;
+     printf( "sub: i_accumulator = %4d \n", xx->i_accumulator);
+     for (i=0; i <= xx->i_accumulator; i++) {
+         printf( "sub: x = %4d y = %4d \n", xx->x[i], xx->y[i]);
+         xx->x[i] = xx->x[i] + xx->y[i];
+         xx->y[i] = xx->x[i];
+      } // for loop  
+     } // subroutine 
+
+
+(END) 
+
+
