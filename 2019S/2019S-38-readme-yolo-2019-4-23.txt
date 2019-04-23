@@ -1,0 +1,7 @@
+April 22, 2019 
+
+Yolo Source code: https://www.pyimagesearch.com/2018/11/12/yolo-object-detection-with-opencv/
+
+Yolo, training and data annotation: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/
+
+
